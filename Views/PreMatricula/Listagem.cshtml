@@ -1,0 +1,35 @@
+@model ICollection<PreMatricula>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Listagem";
+}
+
+<h1>Listagem de Pré-PreMatricula</h1>
+@if(Model == null)
+{
+    <p><strong>Nenhum Registro Encontrado</strong></p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Curso</th>
+                <th>Turma</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nome</td>
+                    <td>@item.Telefone</td>
+                    <td>@item.Turma.Curso.Nome</td>
+                    <td>@item.Turma.dataInicio a @item.Turma.DataFim</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

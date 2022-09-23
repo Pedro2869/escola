@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using etapa_5.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace etapa_5.Models
 {
@@ -28,6 +29,17 @@ namespace etapa_5.Models
             using(var context = new AppDBContext())
             {
                 return context.Turmas.Where(t => t.CursoId == idCurso) .OrderBy(t => t.dataInicio).ToList();
+            }
+        }
+
+        public ICollection<PreMatricula> ListaPreMatriculas()
+        {
+            using(var context = new AppDBContext())
+            {
+                return context.PreMatriculas
+                            .Include(pm => pm.Turma)
+                            .ThenInclude(t => t.Curso)
+                            .ToList();
             }
         }
     }

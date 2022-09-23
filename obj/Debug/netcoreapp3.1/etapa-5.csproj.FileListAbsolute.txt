@@ -44,3 +44,4 @@ C:\Users\clait\OneDrive\Documentos\Curso SENAC\PI-Projeto_Integrador\etapa-5\bin
 C:\Users\clait\OneDrive\Documentos\Curso SENAC\PI-Projeto_Integrador\etapa-5\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\clait\OneDrive\Documentos\Curso SENAC\PI-Projeto_Integrador\etapa-5\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\clait\OneDrive\Documentos\Curso SENAC\PI-Projeto_Integrador\etapa-5\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
+C:\Users\clait\OneDrive\Documentos\Curso SENAC\PI-Projeto_Integrador\etapa-5\obj\Debug\netcoreapp3.1\Razor\Views\PreMatricula\Listagem.cshtml.g.cs

@@ -14427,6 +14427,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\clait\\OneDrive\\Documentos\\Curso SENAC\\PI-Projeto_Integrador\\etapa-5\\Views\\PreMatricula\\Listagem.cshtml",
+      "TargetPath": "Views\\PreMatricula\\Listagem.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\clait\\OneDrive\\Documentos\\Curso SENAC\\PI-Projeto_Integrador\\etapa-5\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
