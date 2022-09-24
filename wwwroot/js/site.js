@@ -70,7 +70,44 @@ function validaNome() {
 }
 
 function validaEmail() {
-  
+  if(document.getElementById("txtEmail").value.length == "")
+  {
+    alert("Por favor, digite seu email para prosseguir")
+    document.getElementById("txtEmail").style.color = "red";
+    return false;
+  }
+  else
+  {
+    document.getElementById("txtEmail").style.color = "black";
+    return true;
+  }
+}
+
+function validaTel() {
+  if(document.getElementById("txtFone").value.length == "")
+  {
+    alert("Por favor, digite o seu telefone para prosseguir")
+    document.getElementById("txtFone").style.color = "red";
+    return false;
+  }
+  else
+  {
+    document.getElementById("txtFone").style.color = "black";
+    return true;
+  }
+}
+
+function validaCurso() {
+  if(document.getElementById("txtCurso").value.length == "")
+  {
+    alert("Por favor, escolha um curso para prosseguir")
+    document.getElementById("txtCurso").style.background = "red";
+    return false;
+  }
+  else
+  {
+    document.getElementById("txtCurso").style.background = "black";
+  }
 }
 
 $(document).ready(function () {

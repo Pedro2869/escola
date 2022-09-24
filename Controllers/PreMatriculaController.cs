@@ -16,7 +16,7 @@ namespace etapa_5.Controllers
             EscolaDataServices eds = new EscolaDataServices();
             eds.InserePreMatricula(preMatricula);
 
-            System.Threading.Thread.Sleep(2000);
+            // System.Threading.Thread.Sleep(2000);
             return Json(new { Status = "OK"});
             }
             catch(Exception e)

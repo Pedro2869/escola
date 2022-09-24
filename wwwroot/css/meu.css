@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(18, 18, 20);
+  color: #fff;
+}
+
+header {
+    object-fit: cover;
+    background-color: rgb(18, 18, 20);
+    padding: auto;
+}
+
+header img {
+  background-color: rgb(18, 18, 20);
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-fluid {
+  width: 30rem;
+}
+
+.col-md-8 {
+  background-color: #202024;
+  color: #fff;
+}
+
+.carousel-item .image {
+  object-fit: cover;
+  width: 256px;
+  height: 300px;
+}
+
+.carousel-item img .image2 {
+    object-fit: cover;
+    height: 450px;
+}

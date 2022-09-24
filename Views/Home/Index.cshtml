@@ -9,13 +9,13 @@
         <section id="carrossel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="~/imagens/img2.jpg" class="d-block w-100">
+                    <img src="~/imagens/img2.jpg" class="d-block w-100 image">
                 </div>
                 <div class="carousel-item">
                     <img src="~/imagens/img3.jpg" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="~/imagens/img4.jpg" class="d-block w-100">
+                    <img src="~/imagens/img4.jpg" class="d-block w-100 image2">
                 </div>
                 <a class="carousel-control-prev" href="#carrossel" role="button" data-slide="prev"><</a>
                 <a class="carousel-control-next" href="#carrossel" role="button" data-slide="next">></a>
@@ -35,19 +35,19 @@
         <form id="formCadastro" onblur="Validation()">
             <div class="form-group">
                 <label for="txtNome">Nome completo</label>
-                <input type="text" id="txtName" class="form-control" onblur="validaNome()">
+                <input type="text" id="txtName" class="form-control" onblur="validaNome()" placeholder="Digite seu nome">
             </div>
             <div class="form-group">
                 <label for="txtEmail">Email</label>
-                <input type="text" id="txtEmail" class="form-control">
+                <input type="text" id="txtEmail" class="form-control" onblur="validaEmail()" placeholder="Digite seu email">
             </div>
             <div class="form-group">
                 <label for="txtFone">Telefone</label>
-                <input type="text" id="txtFone" class="form-control">
+                <input type="text" id="txtFone" class="form-control" onblur="validaTel()" placeholder="Digite o seu número de telefone">
             </div>
             <div class="form-group">
                 <label for="selCurso">Curso</label>
-                <select id="selCurso" class="form-control">
+                <select id="selCurso" class="form-control" onblur="validaCurso()">
                     <option value="0">-- Escolha um curso --</option>
                     @if(Model.Cursos != null)
                     {
