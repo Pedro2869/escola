@@ -1,9 +1,4 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-
-function buscaTurma() {
+﻿function buscaTurma() {
   var parametros = { idCurso: $("#selCurso").val() };
 
   var selTurma = $("#selTurma");
@@ -33,6 +28,14 @@ $(document).ready(function () {
   $("#selCurso").change(buscaTurma);
 });
 
+$(document).ready(function () {
+  $("#selCurso").change(buscaTurma);
+  $("#formCadastro").submit(function (e) {
+    e.preventDefault();
+    realizaPost();
+  });
+});
+
 function realizaPost() {
   var parametros = {
     nome: $("#txtNome").val(),
@@ -41,79 +44,69 @@ function realizaPost() {
     idCurso: $("#selCurso").val(),
     turmaId: $("#selTurma").val(),
   };
+  function validaNome() {
+    if(document.getElementById("#txtNome").value.length < 2)
+      {
+          alert("Digite seu nome");
+          document.getElementById("#txtNome").style.color = "red";
+          return false;
+      }
+      else
+      {
+          document.getElementById("#txtNome").style.color = "black";
+          return true;
+      }
+  }
+  
+  function validaEmail() {
+    if(document.getElementById("#txtEmail").value.length == "")
+    {
+      alert("Por favor, digite seu email para prosseguir")
+      document.getElementById("#txtEmail").style.color = "red";
+      return false;
+    }
+    else
+    {
+      document.getElementById("#txtEmail").style.color = "black";
+      return true;
+    }
+  }
+  
+  function validaTel() {
+    if(document.getElementById("#txtFone").value.length == "")
+    {
+      alert("Por favor, digite o seu telefone para prosseguir")
+      document.getElementById("#txtFone").style.color = "red";
+      return false;
+    }
+    else
+    {
+      document.getElementById("#txtFone").style.color = "black";
+      return true;
+    }
+  }
+  function validaCurso() {
+    if(document.getElementById("#selCurso").value.length == "")
+    {
+      alert("Por favor, escolha um curso para prosseguir")
+      document.getElementById("#selCurso").style.background = "red";
+      return false;
+    }
+    else
+    {
+      document.getElementById("#selCurso").style.background = "black";
+      return true;
+    }
+  }
 
-  $("#modalLoading").modal("show");
-  $.post("/PreMatricula/Cadastra", parametros).done(function () {
-    if (data.status == "OK") {
+  $.post("/PreMatricula/Cadastra", parametros).done(function(){
+    if (validaEmail == true && validaTel == true && validaNome == true && validaCurso == true)  {
       $("#modalLoading").modal("hide");
-      $("#divFormulario").hide();
-      $("#divCadastrado").fadeIn();
+      alert(data.mensagem)
     } else {
-      $("#modalLoading").modal("hide");
       alert(data.mensagem);
     }
   });
 }
 
-function validaNome() {
-  if(document.getElementById("txtName").value.length < 2)
-    {
-        alert("Digite seu nome");
-        document.getElementById("txtName").style.color = "red";
-        return false;
-    }
-    else
-    {
-        document.getElementById("txtName").style.color = "black";
-        return true;
-    }
-}
 
-function validaEmail() {
-  if(document.getElementById("txtEmail").value.length == "")
-  {
-    alert("Por favor, digite seu email para prosseguir")
-    document.getElementById("txtEmail").style.color = "red";
-    return false;
-  }
-  else
-  {
-    document.getElementById("txtEmail").style.color = "black";
-    return true;
-  }
-}
-
-function validaTel() {
-  if(document.getElementById("txtFone").value.length == "")
-  {
-    alert("Por favor, digite o seu telefone para prosseguir")
-    document.getElementById("txtFone").style.color = "red";
-    return false;
-  }
-  else
-  {
-    document.getElementById("txtFone").style.color = "black";
-    return true;
-  }
-}
-
-function validaCurso() {
-  if(document.getElementById("txtCurso").value.length == "")
-  {
-    alert("Por favor, escolha um curso para prosseguir")
-    document.getElementById("txtCurso").style.background = "red";
-    return false;
-  }
-  else
-  {
-    document.getElementById("txtCurso").style.background = "black";
-  }
-}
-
-$(document).ready(function () {
-  $("#selCurso").change(buscaTurma);
-  $("#formCadastro").submit(function (e) {
-    e.preventDefault();
-    realizaPost();
-  });
-});
