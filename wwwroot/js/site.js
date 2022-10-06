@@ -45,68 +45,64 @@ function realizaPost() {
     turmaId: $("#selTurma").val(),
   };
   function validaNome() {
-    if(document.getElementById("#txtNome").value.length < 2)
-      {
-          alert("Digite seu nome");
-          document.getElementById("#txtNome").style.color = "red";
-          return false;
-      }
-      else
-      {
-          document.getElementById("#txtNome").style.color = "black";
-          return true;
-      }
+    if (document.getElementById("#txtNome").value.length < 2) {
+      alert("Digite seu nome");
+      document.getElementById("#txtNome").style.color = "red";
+      return false;
+    } else {
+      document.getElementById("#txtNome").style.color = "black";
+      return true;
+    }
   }
-  
+
   function validaEmail() {
-    if(document.getElementById("#txtEmail").value.length == "")
-    {
-      alert("Por favor, digite seu email para prosseguir")
+    if (document.getElementById("#txtEmail").value.length == "") {
+      alert("Por favor, digite seu email para prosseguir");
       document.getElementById("#txtEmail").style.color = "red";
       return false;
-    }
-    else
-    {
+    } else {
       document.getElementById("#txtEmail").style.color = "black";
       return true;
     }
   }
-  
+
   function validaTel() {
-    if(document.getElementById("#txtFone").value.length == "")
-    {
-      alert("Por favor, digite o seu telefone para prosseguir")
+    if (document.getElementById("#txtFone").value.length == "") {
+      alert("Por favor, digite o seu telefone para prosseguir");
       document.getElementById("#txtFone").style.color = "red";
       return false;
-    }
-    else
-    {
+    } else {
       document.getElementById("#txtFone").style.color = "black";
       return true;
     }
   }
   function validaCurso() {
-    if(document.getElementById("#selCurso").value.length == "")
-    {
-      alert("Por favor, escolha um curso para prosseguir")
+    if (document.getElementById("#selCurso").value.length == "") {
+      alert("Por favor, escolha um curso para prosseguir");
       document.getElementById("#selCurso").style.background = "red";
       return false;
-    }
-    else
-    {
+    } else {
       document.getElementById("#selCurso").style.background = "black";
       return true;
     }
   }
 
-  $.post("/PreMatricula/Cadastra", parametros).done(function(){
-    if (validaEmail == true && validaTel == true && validaNome == true && validaCurso == true)  {
+  $.post("/PreMatricula/Cadastra", parametros).done(function () {
+    if (
+      validaEmail == true &&
+      validaTel == true &&
+      validaNome == true &&
+      validaCurso == true
+    ) {
       $("#modalLoading").modal("hide");
-      alert(data.mensagem)
+      alert(data.mensagem);
     } else {
       alert(data.mensagem);
     }
   });
 }
 
-
+// O que eu quero fazer com o formulário?
+// Quero preencher os campos corretamente
+// Se todos os campos forem preenchidos corretamente, ao clicar no botão de enviar o currículo, deve carregar uma mensagem de sucesso
+// Senão aparecer mensagem de erro
